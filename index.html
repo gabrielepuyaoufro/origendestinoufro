@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Análisis Geoespacial - Temuco</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1200px;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            padding: 40px;
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 2.5em;
+        }
+        .subtitle {
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 1.1em;
+        }
+        .maps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+        .map-card {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 25px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 2px solid #e0e0e0;
+        }
+        .map-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+        .map-icon {
+            font-size: 3em;
+            margin-bottom: 15px;
+        }
+        .map-card h2 {
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 1.5em;
+        }
+        .map-card p {
+            color: #666;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+        .info-box {
+            background: #e3f2fd;
+            border-left: 4px solid #2196f3;
+            padding: 15px;
+            margin-top: 30px;
+            border-radius: 5px;
+        }
+        .info-box h3 {
+            color: #1976d2;
+            margin-bottom: 10px;
+        }
+        .info-box ul {
+            margin-left: 20px;
+            color: #555;
+        }
+        .info-box li {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📍 Análisis Geoespacial Temuco</h1>
+        <p class="subtitle">Visualización de distribución geográfica y zonas de densidad</p>
+        
+        <div class="maps-grid">
+            <div class="map-card">
+                <div class="map-icon">🗺️</div>
+                <h2>Mapa de Puntos</h2>
+                <p>Ubicaciones individuales con círculos de incertidumbre. Los colores indican el nivel de confianza de la geolocalización.</p>
+                <a href="puntos_temuco.html" class="btn">Ver Mapa de Puntos</a>
+            </div>
+            
+            <div class="map-card">
+                <div class="map-icon">🔥</div>
+                <h2>Mapa de Calor</h2>
+                <p>Visualización de densidad geográfica por sectores. Identifica áreas de mayor concentración en la ciudad.</p>
+                <a href="calor_temuco.html" class="btn">Ver Mapa de Calor</a>
+            </div>
+        </div>
+        
+        <div class="info-box">
+            <h3>ℹ️ Información del Proyecto</h3>
+            <ul>
+                <li><strong>Ciudad:</strong> Temuco, Región de La Araucanía</li>
+                <li><strong>Metodología:</strong> Geocodificación con OpenStreetMap Nominatim</li>
+                <li><strong>Buffer de incertidumbre:</strong> 150-500 metros según confianza</li>
+                <li><strong>Privacidad:</strong> Datos anonimizados sin información personal</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
